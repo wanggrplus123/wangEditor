@@ -1,0 +1,176 @@
+@width: 279px;
+@interval: 7px;
+@defaultSize: 12px;
+@border: 1px solid #cfcfcf;
+
+[class^='we-'],
+[class*=' we-'] {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+// 颜色列表
+.we-selections {
+    width: @width;
+    padding: @interval 8px;
+    border: @border;
+    box-sizing: border-box;
+    .we-selection {
+        width: 100%;
+        border: none;
+        border-top: @border;
+        padding: 0;
+        .we-selection-title {
+            font-size: 16px;
+            color: #999;
+            padding: @interval 3px;
+            margin: 0;
+        }
+        .we-selection-main {
+            width: 100%;
+            font-size: 0;
+            .we-color-group {
+                display: flex;
+                flex-wrap: wrap;
+                &:nth-of-type(n + 2) {
+                    margin-top: @interval;
+                }
+                .we-color {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin: 3px;
+                    border-radius: 2px;
+                    cursor: pointer;
+                    box-sizing: border-box;
+                    position: relative;
+                    background-color: pink;
+                    &:hover {
+                        box-shadow: 0 0 0 1px #5fb878;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 调色板
+.we-palette {
+    width: @width;
+    padding: 10px;
+    font-size: 0;
+    border: @border;
+    color: #999;
+    .we-slider {
+        box-sizing: border-box;
+        border: 1px solid #ffffff;
+        background-color: #ffffff;
+        box-shadow: 0 0 2px #c2c2c2;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        &.circle {
+            border-radius: 50%;
+            background-color: transparent;
+            transform: translate(-50%, -50%);
+        }
+        &.across {
+            height: 5px;
+            transform: translateY(-50%);
+        }
+        &.vertical {
+            width: 5px;
+            transform: translateX(-50%);
+        }
+    }
+    .we-color_hsv {
+        .we-hsv-sv {
+            width: 240px;
+            height: 180px;
+            background-color: pink;
+            position: relative;
+            cursor: pointer;
+        }
+        .we-hsv-h {
+            width: 10px;
+            height: 180px;
+            background-color: red;
+            position: relative;
+            cursor: pointer;
+            margin-left: @interval;
+        }
+    }
+    .we-color_alpha {
+        width: 100%;
+        height: 10px;
+        background-color: pink;
+        margin-top: @interval;
+        position: relative;
+    }
+    .we-color-preview {
+        display: flex;
+        justify-content: space-between;
+        margin-top: @interval;
+        .we-view {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: pink;
+        }
+        .we-input {
+            display: flex;
+            font-size: @defaultSize;
+            justify-content: space-between;
+            align-items: center;
+            .value {
+                outline: none;
+                border: @border;
+                font-size: 10px;
+                padding: 5px 0;
+                text-align: center;
+                vertical-align: middle;
+                width: 180px;
+            }
+            .pattern {
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .we-color-btns {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: @interval;
+        .btn {
+            outline: none;
+            line-height: 1;
+            font-size: @defaultSize;
+            color: #5fb878;
+            white-space: nowrap;
+            text-align: center;
+            vertical-align: middle;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: transparent;
+            padding: 0 0 0 25px;
+            margin-top: 5px;
+            &.primary {
+                color: #c2c2c2;
+            }
+            &.warm {
+                color: #ffb800;
+            }
+        }
+    }
+}
